@@ -1,0 +1,48 @@
+    1  sudo groupadd students
+    2  sudo useradd -u 1234 -g students -m -s /bin/bash user1
+    3  sudo passwd user1 3588 3588
+    4  sudo passwd user1
+    5  sudo chage -M 90 user1
+    6  sudo change -M 90 user1
+    7  grep user1 /etc/passwd
+    8  grep students /etc/group
+    9  sudo chage -1 user1
+   10  sudo chage -l user1
+   11  sudo find / -perm -4000 -type f 2>/dev/null > ~/setuid-files.out
+   12  cat ~/setuid-files.out
+   13  ps -eo pid,ruid,euid,cmd | awk 'NR==1 || ($2 != 0 && $3 == 0)' > ~/privileged-processes.out
+   14  cat ~/privileged-processes.out
+   15  sudo cp /bin/cat /home/user1/mycat
+   16  sudo chown root:root /home/user1/mycat
+   17  sudo chmod u+s /home/user1/mycat
+   18  ls -l /home/user1/mycat
+   19  ls -ld /home/user1
+   20  sudo ls -l /home/user1/mycat
+   21  sudo su - user1 -c '/home/user1/mycat /etc/shadow'
+   22  sudo cp /bin/chown /home/user1/mychown
+   23  sudo setcap cap_chown+ep /home/user1/mychown
+   24  getcap /home/user1/mychown
+   25  sudo getcap /home/user1/mychown
+   26  sudo su - user1 -c 'touch /tmp/testfile && /home/user1/mychown root:root /tmp/testfile && ls -l /tmp/testfile'
+   27  sudo visudo
+   28  ps -ef | grep visudo
+   29  sudo rm -f /etc/sudoers.tmp /etc/stmp
+   30  sudo visudo -c
+   31  sudo visudo
+   32  ps -ef | grep visudo
+   33  sudo killall visudo
+   34  ps -ef | grep visudo
+   35  sudo rm -f /etc/sudoers.tmp /etc/stmp /etc/sudoers.lock /var/lib/sudo/visudo.lock
+   36  sudo visudo -c
+   37  sudo visudo
+   38  sudo nano /etc/sudoers
+   39  sudo visudo -c
+   40  ps -ef | grep visudo и ls -l /etc/sudoers*
+   41  ps -ef | grep visudo
+   42  sudo ls -l /etc/sudoers*
+   43  sudo ls -l /etc/sudoers.d
+   44  sudo kill -9 2701 2703 2704
+   45  ps -ef | grep visudo
+   46  sudo visudo
+   47  sudo -u user1 sudo /bin/date
+   48  history > ~/history.out

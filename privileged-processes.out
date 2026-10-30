@@ -1,0 +1,2 @@
+    PID  RUID  EUID CMD
+   1523  1000     0 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
