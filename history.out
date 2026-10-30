@@ -46,3 +46,50 @@
    46  sudo visudo
    47  sudo -u user1 sudo /bin/date
    48  history > ~/history.out
+   49  stat /home/user1 > ~/stat.out
+   50  stat /home/user1/mycat >> ~/stat.out
+   51  stat /home/user1/mychown >> ~/stat.out
+   52  sudo stat /home/user1/mycat >> ~/stat.out
+   53  sudo stat /home/user1/mychown >> ~/stat.out
+   54  sudo stat /home/user1 > ~/stat.out
+   55  sudo stat /home/user1/mycat >> ~/stat.out
+   56  sudo stat /home/user1/mychown >> ~/stat.out
+   57  cat ~/stat.out
+   58  getcap /home/user1/mychown > ~/getcap.out
+   59  sudo getcap /home/user1/mychown > ~/getcap.out
+   60  ls -l ~/setuid-files.out ~/privileged-processes.out
+   61  git init
+   62  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   63  sudo cp /etc/passwd /etc/shadow /etc/group /etc/sudoers .
+   64  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   65  sudo chown roman:roman passwd shadow group sudoers
+   66  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   67  ls -l shadow
+   68  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   69  sudo chown $(whoami):$(whoami) passwd shadow group sudoers
+   70  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   71  git commit -m "Add MEPHI homework 2026 files"
+   72  git branch -M main
+   73  git remote add origin https://github.com/Roman-Mitrishchev/mephi-linux-security-2026.git
+   74  git push -u origin main
+   75  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   76  git commit -m "Add MEPHI homework 2026 files"
+   77  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   78  git commit -m "Add MEPHI homework 2026 files"
+   79  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   80  git commit -m "Add MEPHI homework 2026 files"
+   81  git add mephi-screenshot.png history.out stat.out getcap.out setuid-files.out privileged-processes.out passwd shadow group sudoers
+   82  git status
+   83  # История команд
+   84  history > ~/history.out
+   85  # Статистика (с sudo, чтобы не было ошибки доступа)
+   86  sudo stat /home/user1 > ~/stat.out
+   87  sudo stat /home/user1/mycat >> ~/stat.out
+   88  sudo stat /home/user1/mychown >> ~/stat.out
+   89  # Capabilities
+   90  sudo getcap /home/user1/mychown > ~/getcap.out
+   91  # Мониторинг файлов и процессов (если вы их не сохраняли ранее)
+   92  sudo find / -perm -4000 -type f 2>/dev/null > ~/setuid-files.out
+   93  ps -eo pid,ruid,euid,cmd | awk 'NR==1 || ($2 != 0 && $3 == 0)' > ~/privileged-processes.out
+   94  MitCraft815
+   95  history > ~/history.outhistory > ~/history.outhistory > ~/history.out
